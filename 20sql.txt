@@ -1,0 +1,29 @@
+CREATE TABLE pet (pet_name VARCHAR(50),pet_age INT,description VARCHAR(50),pet_price DECIMAL(10, 2));
+
+ALTER TABLE pet ADD pet_food VARCHAR(50),ADD pet_breed VARCHAR(50);
+
+INSERT INTO pet (pet_name, pet_age, description, pet_price, pet_food, pet_breed)
+VALUES
+('rocky', 3, 'indian', 45000, 'Pedigree', 'indian'),
+('Max', 7, 'Labrador', 50000, 'Pedigree', 'Labrador'),
+('sky', 2, 'chinese', 30000, 'Royal Canin', 'chinese'),
+('Lucy', 8, 'huskey', 9000, 'Pedigree', 'huskey'),
+('black', 5, 'Bulldog', 38000, 'Purina', 'Bulldog');
+
+SELECT * FROM pet WHERE pet_age > 5;
+
+SELECT * FROM pet WHERE pet_breed = 'Labrador';
+
+SELECT * FROM pet WHERE pet_price BETWEEN 34000 AND 56000;
+
+SELECT * FROM pet WHERE pet_food = 'Pedigree';
+
+ALTER TABLE pet RENAME COLUMN description TO pet_description;
+
+ALTER TABLE pet MODIFY pet_description VARCHAR(150);
+
+UPDATE pet SET pet_price = 20000 WHERE pet_age > 7;
+
+DELETE FROM pet WHERE pet_price < 10000;
+
+select *from pet;
